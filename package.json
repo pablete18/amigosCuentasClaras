@@ -1,0 +1,38 @@
+{
+  "name": "cuentasclaras.ts",
+  "version": "1.0.0",
+  "description": "cuentas claras amistad duradera",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start" : "tsc && node dist/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pablete18/amigosCuentasClaras.git"
+  },
+  "author": "Pablo Alcaraz",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pablete18/amigosCuentasClaras/issues"
+  },
+  "homepage": "https://github.com/pablete18/amigosCuentasClaras#readme",
+  "dependencies": {
+    "class": "^0.1.4",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "morgan": "^1.10.0",
+    "mysql2": "^3.11.0",
+    "sequelize": "^6.37.3",
+    "typescript": "^5.5.4",
+    "validator": "^13.12.0"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.17",
+    "@types/express": "^4.17.21",
+    "@types/morgan": "^1.9.9",
+    "concurrently": "^8.2.2",
+    "nodemon": "^3.1.4"
+  }
+}
