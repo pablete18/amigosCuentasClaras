@@ -1,21 +1,4 @@
-export class Amigo {
-    public nombre : string;
-    public puso : number
-    public debeRecibir : number
-    public debePagar : number
-     
-
-    constructor(
-        nombre : string,
-        puso : number
-    ){
-        this.nombre = nombre;
-        this.puso = puso;
-        this.debeRecibir = 0;
-        this.debePagar = 0
-        
-    }
-}
+import { Amigo } from "./Amigo"
 
 export class CuentasClaras{
    public totalAmigos : Amigo[]

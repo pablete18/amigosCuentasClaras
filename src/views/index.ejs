@@ -7,12 +7,22 @@
 </head>
 <body>
     <h1>Cuentas claras</h1>
-    <h3>Agrega a tu amigo</h3>
-    <form action="/" method="get">
-        <label for="name">Nombre de tu amigo</label>
-        <input type="text" name ="name" id="name">
+    <h3>Agrega a tu amigo</h3>    
+    <form action="/" method="POST">
+        <label for="nombre">Nombre de tu amigo</label>
+        <input type="text" name ="nombre" id="nombre">
         <label for="puso">Cuanto puso</label>
         <input type="text"name ="puso" id="puso">
+        <button type = "submit">Crear usuario</button>
     </form>
+
+    <ul>
+        <% if (!amigos) { %>
+         <h3>Todavia no agregaste amigos</h3>
+        <% } %>
+        <% amigos.forEach(amigo => { %>
+            <li><%= amigo.nombre %>: Pone = <%= amigo.puso%></li>
+        <% }) %>
+    </ul>
 </body>
 </html>

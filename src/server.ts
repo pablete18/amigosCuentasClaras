@@ -29,7 +29,7 @@ class serverBootstrap {
 
     public listen(){
         this.app.listen(this.port, ()=> {
-            console.log(`Servidor conrriendo en ${this.port}`);
+            console.log(`Servidor conrriendo en http://localhost:${this.port}`);
             
         })
     }

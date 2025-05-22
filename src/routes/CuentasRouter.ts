@@ -7,5 +7,6 @@ export class CuentasRouter extends BaseRouter<CuentasController>{
     }
     routes(): void {
         this.router.get('/', (req,res)=> this.controller.getUsers(req,res))
+        this.router.post('/',(req,res)=> this.controller.createUser(req,res))
     }
 }
