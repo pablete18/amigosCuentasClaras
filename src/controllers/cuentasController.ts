@@ -50,20 +50,19 @@ export class CuentasController{
    async createUser(req : Request,res : Response) {       
     try {
         const data = req.body
-        console.log(data)
         const amigos = parsearJSON(leerJSON())
 
-        const ultimoId = amigos[amigos.length-1].id
         const newAmigo = new Amigo(data)
-
+        const ultimoId = amigos[amigos.length-1].id
+        const totalAmigos = new CuentasClaras(amigos.length)
 
         amigos.push({
-            ...newAmigo
+            id : ultimoId + 1,
+            nombre : newAmigo.nombre,
+            puso : newAmigo.puso
         })
 
         escribirJSON(amigos)
-
-        console.log(amigos);
         
         res.render('index',{
             amigos
@@ -72,8 +71,22 @@ export class CuentasController{
     } catch (error) {
         console.log(error);
         
-    }    
-        
+    }          
+    };
+    async deleteUser(req: Request, res : Response){
+        try {
+            const id: string = req.params.id
+            const amigos = leerJSON()
+            const userToDestroy = amigos.filter((amigo:any)=> amigo.id !== id)
 
+            escribirJSON(userToDestroy)
+
+            return res.redirect('index')
+
+        } catch (error) {
+            console.log(error);
+            
+        }
     }
+    
 }

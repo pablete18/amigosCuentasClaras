@@ -1,4 +1,6 @@
-export class Amigo {
+
+
+export class Amigo{
     public id : number;
     public nombre : string;
     public puso : number;
