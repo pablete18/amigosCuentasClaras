@@ -14,7 +14,7 @@ export class Amigo{
         puso : number}
         
     ){
-        this.id = 0
+        this.id = data.id,
         this.nombre = data.nombre;
         this.puso = data.puso;
         this.debeRecibir = 0;

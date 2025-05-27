@@ -22,7 +22,7 @@
         <% } %>
         <% amigos.forEach(amigo => { %>
             <li><%= amigo.nombre %>: Pone = <%= amigo.puso%>
-                <form action="/<%= amigo.id %>?_method=DELETE" method="POST">
+                <form action="/<%= amigo.id %>?_method=DELETE"method="POST">
                     <button type = "submit" name="delete">Eliminar</button>
                 </form>
                 <li>

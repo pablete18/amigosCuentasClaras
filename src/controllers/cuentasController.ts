@@ -52,12 +52,14 @@ export class CuentasController{
         const data = req.body
         const amigos = parsearJSON(leerJSON())
 
+       const ultimoId = amigos.length === 0
+        ? amigos.id ===1
+        : amigos[amigos.length - 1].id + 1;
+          
         const newAmigo = new Amigo(data)
-        const ultimoId = amigos[amigos.length-1].id
-        const totalAmigos = new CuentasClaras(amigos.length)
-
+        
         amigos.push({
-            id : ultimoId + 1,
+            id : ultimoId,
             nombre : newAmigo.nombre,
             puso : newAmigo.puso
         })
@@ -75,13 +77,14 @@ export class CuentasController{
     };
     async deleteUser(req: Request, res : Response){
         try {
-            const id: string = req.params.id
-            const amigos = leerJSON()
-            const userToDestroy = amigos.filter((amigo:any)=> amigo.id !== id)
-
+            const id = Number(req.params.id)
+            const amigos = parsearJSON(leerJSON())
+            const userToDestroy:any = amigos.filter((amigo:any)=> amigo.id !== id)
+           
             escribirJSON(userToDestroy)
-
-            return res.redirect('index')
+            
+            
+            return res.redirect('/')
 
         } catch (error) {
             console.log(error);
