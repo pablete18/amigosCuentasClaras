@@ -2,6 +2,7 @@ import express from "express";
 import morgan from "morgan"
 import cors from "cors"
 import path from "path";
+import methodOverride from "method-override"
 import { CuentasRouter } from "./routes/CuentasRouter";
 
 
@@ -16,6 +17,7 @@ class serverBootstrap {
         this.app.use(express.urlencoded({extended : true}))
         this.app.use(cors())
         this.app.use(morgan('dev'))
+        this.app.use(methodOverride('_method'))
         this.app.use('/',this.routers())
 
 
